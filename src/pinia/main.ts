@@ -1,26 +1,27 @@
 import { defineStore } from 'pinia'
+import { v4 as uuid } from 'uuid'
+import { MainState } from '@/types/main.ts'
 
-export const mainStore = defineStore('main', {
-  state: ():State => ({
-    menuList: [] as MenuItem[],
+const useMainStore = defineStore('main', {
+  state: ():MainState => ({
+    menuList: [],
+    menus: [],
   }),
   getters: {
-    menuList: state => state.menuList
+    getMenuList: state => {
+      return state.menuList
+    }
   },
   actions: {
-    set_menuList() {
-
+    init_menuList() {
+      this.menuList = [{
+        id: uuid(),
+        label: '组件',
+        router: '/overview'
+      }]
     }
   }
 })
 
-interface State {
-  menuList: MenuItem[]
-}
 
-interface MenuItem {
-  id: String,
-  label: String,
-  router: String,
-}
-
+export default useMainStore
