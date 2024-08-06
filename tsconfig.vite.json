@@ -5,9 +5,9 @@
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true, // 不想要求import * as xxx from 'xxx'方式导入
     "strict": true,
-    "noEmit": true
+    "noEmit": true,
   },
   "include": ["vite.config.ts"]
 }

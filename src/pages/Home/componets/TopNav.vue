@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import useMainStore from '@/pinia/main'
+  import useMainStore from '@/pinia/main.ts'
   import { MenuItem } from '@/types/main.ts'
   const mainStore = useMainStore()
   const menuList = mainStore.menuList
@@ -12,7 +12,7 @@
     <div class="left"></div>
     <div class="right">
       <div 
-      v-for="menu in menuList" :key="menu.id" class="item" :class="{actived: activeMenu.router === menu.router}">
+      v-for="menu in menuList" :key="menu.id" class="item" :class="{actived: activeMenu?.router === menu.router}">
         {{ menu.label }}
       </div>
       <div class="btn">

@@ -1,17 +1,13 @@
 {
   "files": [],
-  "references": [
+  "references": [ // 多部分代码对于ts变异配置
+    // src目录
     {
-      "path": "./tsconfig.app.json"
+      "path": "./tsconfig.src.json"
     },
+    // vite.config.ts文件
     {
-      "path": "./tsconfig.node.json"
+      "path": "./tsconfig.vite.json"
     }
   ],
-  "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"]
-    }
-  }
 }

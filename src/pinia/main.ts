@@ -5,7 +5,6 @@ import { MainState } from '@/types/main.ts'
 const useMainStore = defineStore('main', {
   state: ():MainState => ({
     menuList: [],
-    menus: [],
   }),
   getters: {
     getMenuList: state => {
