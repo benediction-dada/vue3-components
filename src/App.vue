@@ -1,9 +1,18 @@
 <script setup lang="ts">
+import { onUnmounted } from 'vue';
 import useMainStore from './pinia/main'
 
 const mainStore = useMainStore()
 
-mainStore.init_menuList()
+
+// 初始化菜单
+mainStore.init()
+
+
+// 销毁
+onUnmounted(() => {
+  mainStore.destroyed()
+})
 </script>
 
 <template>

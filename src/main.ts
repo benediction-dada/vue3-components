@@ -7,6 +7,7 @@ import router from './router'
 import './assets/iconfont/iconfont.js'
 import './assets/iconfont/iconfont.css'
 import './style.less'
+import config from './assets/js/config.js'
 
 // 组件
 import App from './App.vue'
@@ -15,6 +16,7 @@ import App from './App.vue'
 const app = createApp(App)
 const pinia = createPinia()
 
+app.config.globalProperties.$config = config
 app.use(pinia)
 app.use(router)
 

@@ -8,7 +8,7 @@
   let activeMenu = menuList.find((menu:MenuItem) => menu.router === '/overview')
 </script>
 <template>
-  <header>
+  <nav>
     <div class="left"></div>
     <div class="right">
       <div 
@@ -19,11 +19,11 @@
         <i class="iconfont icon-github"></i>
       </div>
     </div>
-  </header>
+  </nav>
 </template>
 
 <style lang="less" scoped>
-header {
+nav {
   height: 55px;
   border: 1px solid var(--grey-7);
   border-left: 0;

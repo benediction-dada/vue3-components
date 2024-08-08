@@ -1,6 +1,11 @@
 <script lang="ts" setup>
   import TopNav from './componets/TopNav.vue';
-  
+  import LeftMenu from './componets/LeftMenu.vue';
+  import Content from './componets/Content/index.vue'
+
+
+
+
 </script>
 
 <template>
@@ -8,9 +13,17 @@
   <top-nav></top-nav>
 
   <!-- 内容部分 -->
-   
-  <div>
-  </div>
+  <main>
+    <LeftMenu></LeftMenu>
+    <Content></Content>
+  </main>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+  main {
+    height: calc(100vh - 55px);
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+</style>
