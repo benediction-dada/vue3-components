@@ -3,6 +3,7 @@
  * @description 存放所有全局指令
  */
 
+import { App } from 'vue'
 
 /**
  * @description 点击外部指令
@@ -18,15 +19,20 @@ export const click_outside = {
       }
     }
     document.addEventListener('click', self.clickHandler)
-    el['__click_outside__'] = self
+    el['__click_outside__'] = self // 将函数存在元素上方便卸载
   },
   unmounted(el:any) {
     if(el['__click_outside__']) {
       document.removeEventListener('click', el['__click_outside__'].clickHandler)
+      delete el['__click_outside__']
     }
   }
 }
 
 interface ClickOutsideSelf  {
   clickHandler?: (event: MouseEvent) => void
+}
+
+export default (vue: App) => {
+  vue.directive('click_outside', click_outside)
 }

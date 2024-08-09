@@ -3,23 +3,41 @@ import useMainStore from '@/pinia/main'
 import { ref, watch } from 'vue';
 const mainStore = useMainStore()
 
+
+let disableClickOut = true; // 防止展开按钮展开也触发clickout
 const showLeftMenu = ref(true) // 初始进入小屏幕状态是隐藏侧边栏（为了隐藏css变化过程）
 const expandMenu = ref(false) // 侧边栏折叠状态
 
+// 初始化
 const init = () => {
   showLeftMenu.value = !mainStore.isSmallScreen
 }
 
+// 侧边栏开关
 const menuExpandClick = () => {
   showLeftMenu.value = true
   expandMenu.value = !expandMenu.value
+
+  setTimeout(() => {
+    disableClickOut = false
+  }, 200)
 }
 
+// 点击侧边栏外部要折叠
+const clickOutsideHandler = () => {
+  if(!disableClickOut && expandMenu.value) {
+    expandMenu.value = false
+    disableClickOut = true
+  }
+}
+
+// 窗口监听
 watch(() => mainStore.isSmallScreen, (newVal) => {
   if(newVal) {
     // 小屏幕初始化
     showLeftMenu.value = false
     expandMenu.value = false
+    disableClickOut = true
   } else {
     // 大屏幕初始化
     showLeftMenu.value = true
@@ -30,7 +48,7 @@ watch(() => mainStore.isSmallScreen, (newVal) => {
 init()
 </script>
 <template>
-  <aside v-show="showLeftMenu" :class="{
+  <aside v-show="showLeftMenu" v-click_outside="clickOutsideHandler" :class="{
     'aside-fold': mainStore.isSmallScreen,
     'aside-animation-fold': !expandMenu && mainStore.isSmallScreen,
     'aside-animation-expand': expandMenu && mainStore.isSmallScreen,
