@@ -44,17 +44,18 @@ watch(() => mainStore.isSmallScreen, (newVal) => {
   }
 })
 
-
 init()
 </script>
 <template>
+  <!-- 侧边栏 -->
   <aside v-show="showLeftMenu" v-click_outside="clickOutsideHandler" :class="{
     'aside-fold': mainStore.isSmallScreen,
     'aside-animation-fold': !expandMenu && mainStore.isSmallScreen,
     'aside-animation-expand': expandMenu && mainStore.isSmallScreen,
     }">
-    leftMenu
+    
   </aside>
+  <!-- 侧边栏小屏幕展开按钮块 -->
   <section v-if="mainStore.isSmallScreen">
     <div class="item" @click="menuExpandClick">
       <i class="iconfont icon-github"></i>
@@ -70,7 +71,6 @@ init()
     flex-shrink: 0;
     width: var(--aside-bar-width);
     height: 100%;
-    border: 1px solid;
     background-color: white;
     transform: translateX(0)
   }
@@ -92,13 +92,14 @@ init()
     animation-duration: .5s;
   }
 
-  // 侧边栏收起样式 （包含600px）
+  // 侧边栏收起样式 （包含600px）(侧边栏浮起样式)
   @media (max-width: 600px) {
     aside {
       position: fixed;
       top: 0;
       height: 100vh;
-      transform: translateX(-600px)
+      transform: translateX(-600px);
+      box-shadow: var(--box-showdow-right-bottom);
     }
   }
 

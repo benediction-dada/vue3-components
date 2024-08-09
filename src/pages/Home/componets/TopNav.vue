@@ -25,9 +25,7 @@
 <style lang="less" scoped>
 nav {
   height: 55px;
-  border: 1px solid var(--grey-7);
-  border-left: 0;
-  border-right: 0;
+  border-bottom: 1px solid var(--grey-b);
   color: var(--grey-7);
   display: flex;
   align-items: center;

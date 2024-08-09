@@ -1,10 +1,7 @@
 <script lang="ts" setup>
   import TopNav from './componets/TopNav.vue';
-  import LeftMenu from './componets/LeftMenu.vue';
+  import LeftMenu from './componets/LeftMenu/index.vue';
   import Content from './componets/Content/index.vue'
-
-
-
 
 </script>
 
