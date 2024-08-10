@@ -53,7 +53,7 @@ init()
     'aside-animation-fold': !expandMenu && mainStore.isSmallScreen,
     'aside-animation-expand': expandMenu && mainStore.isSmallScreen,
     }">
-    
+  <el-button type="primary">侧边栏</el-button>
   </aside>
   <!-- 侧边栏小屏幕展开按钮块 -->
   <section v-if="mainStore.isSmallScreen">

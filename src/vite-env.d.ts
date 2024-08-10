@@ -1,3 +1,7 @@
+import { SFCWithInstall } from "element-plus/es/utils/index.mjs";
+import { NotifyType } from "./utils/elementPlus";
+import { IElMessageBox } from "element-plus";
+
 /// <reference types="vite/client" />
 declare module '*.vue' {
   import type { DefineComponent } from 'vue'
@@ -6,3 +10,9 @@ declare module '*.vue' {
 }
 
 declare module 'uuid'
+declare global {
+  interface Window {
+    $notify: (title: string, message: string, type: NotifyType) => void,
+    $messageBox: SFCWithInstall<IElMessageBox>
+  }
+}

@@ -3,8 +3,6 @@
  * @description 存放所有全局指令
  */
 
-import { App } from 'vue'
-
 /**
  * @description 点击外部指令
  * @param {function} 点击元素外部运行的回调函数
@@ -33,6 +31,6 @@ interface ClickOutsideSelf  {
   clickHandler?: (event: MouseEvent) => void
 }
 
-export default (vue: App) => {
+export default (vue: any) => {
   vue.directive('click_outside', click_outside)
 }

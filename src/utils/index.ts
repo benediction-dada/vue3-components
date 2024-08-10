@@ -12,7 +12,9 @@
 export const copyText = async (text:string) => {
   try {
     await navigator.clipboard.writeText(text);
+    window.$notify('成功', '复制成功。', 'success')
   } catch (err) {
+    window.$notify('失败', '复制失败，请重试。', 'error')
     throw err
   }
 }
