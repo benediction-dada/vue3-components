@@ -16,7 +16,7 @@
   </main>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
   main {
     height: calc(100vh - 55px);
     position: relative;

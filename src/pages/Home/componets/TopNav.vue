@@ -22,7 +22,7 @@
   </nav>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 nav {
   height: 55px;
   border-bottom: 1px solid var(--grey-b);

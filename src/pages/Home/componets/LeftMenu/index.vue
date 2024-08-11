@@ -65,7 +65,7 @@ init()
   
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
   // 侧边栏基础样式
   aside {
     flex-shrink: 0;

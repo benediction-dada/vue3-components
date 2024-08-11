@@ -7,7 +7,7 @@
   </article>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
   article {
     flex: 1;
     width: 100%;
