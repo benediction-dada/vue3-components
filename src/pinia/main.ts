@@ -5,19 +5,21 @@
 
 import { defineStore } from 'pinia'
 import { v4 as uuid } from 'uuid'
-import { MainState } from '@/types/main.ts'
+import { MainState, ThemeType } from '@/types/main.ts'
 import $config from '@/assets/js/config'
 
 const useMainStore = defineStore('main', {
   state: ():MainState => ({
-    menuList: [], // 菜单
+    menuList: [], // 导航菜单
     isSmallScreen: false, // 判断是否是小屏幕
+    themeType: 'light', // 主题类型  light | dark
 
     ListenScreen: null
   }),
   getters: {
     getMenuList: state => state.menuList,
-    getIsSmallScreen: state => state.isSmallScreen
+    getIsSmallScreen: state => state.isSmallScreen,
+    getThemeType: state => state.themeType
   },
   actions: {
     //项目初始化
@@ -38,7 +40,7 @@ const useMainStore = defineStore('main', {
       this.menuList = [{
         id: uuid(),
         label: '组件',
-        router: '/overview'
+        router: '/components'
       }]
     },
     // 初始化参数
@@ -56,6 +58,11 @@ const useMainStore = defineStore('main', {
     // 卸载窗口监听事件
     unstall_WindowListen() {
       window.addEventListener('resize', this.ListenScreen)
+    },
+
+
+    set_themeType(type: ThemeType) {
+      this.themeType = type
     }
   }
 })

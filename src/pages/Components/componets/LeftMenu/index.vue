@@ -1,6 +1,8 @@
 <script lang="ts" setup>
+import Menu from './Menu.vue';
 import useMainStore from '@/pinia/main'
 import { ref, watch } from 'vue';
+
 const mainStore = useMainStore()
 
 
@@ -53,7 +55,7 @@ init()
     'aside-animation-fold': !expandMenu && mainStore.isSmallScreen,
     'aside-animation-expand': expandMenu && mainStore.isSmallScreen,
     }">
-  <el-button type="primary">侧边栏</el-button>
+    <Menu></Menu>
   </aside>
   <!-- 侧边栏小屏幕展开按钮块 -->
   <section v-if="mainStore.isSmallScreen">

@@ -11,10 +11,26 @@
   <nav>
     <div class="left"></div>
     <div class="right">
+      <!-- 菜单 -->
       <div 
       v-for="menu in menuList" :key="menu.id" class="item" :class="{actived: activeMenu?.router === menu.router}">
         {{ menu.label }}
       </div>
+      <!-- 主题开关 -->
+      <el-switch
+        v-model="mainStore.themeType"
+        active-value="light"
+        inactive-value="dark">
+        <!-- light -->
+        <template #active-action>
+          <i class="iconfont icon-github"></i>
+        </template>
+        <!-- dark -->
+        <template #inactive-action>
+          <i class="iconfont icon-customer-fill"></i>
+        </template>
+      </el-switch>
+      <!-- github链接 -->
       <div class="btn">
         <i class="iconfont icon-github"></i>
       </div>
@@ -61,6 +77,9 @@ nav {
         width: 100%;
         border-bottom: 3px solid var(--primary);
       }
+    }
+    .el-switch {
+      height: 100%;
     }
     .btn {
       display: flex;

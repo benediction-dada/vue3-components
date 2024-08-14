@@ -1,5 +1,6 @@
 export interface componentsStore {
-  components: componentsGroup[]
+  menus: componentsGroup[],
+  actived: string
 }
 
 export interface componentsGroup {

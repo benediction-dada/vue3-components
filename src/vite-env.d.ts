@@ -10,6 +10,9 @@ declare module '*.vue' {
 }
 
 declare module 'uuid'
+declare module '*.scss' {
+  export default any
+}
 declare global {
   interface Window {
     $notify: (title: string, message: string, type: NotifyType) => void,

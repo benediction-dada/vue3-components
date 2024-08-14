@@ -1,10 +1,7 @@
 import ElementPlus, { ElNotification, ElMessage, ElMessageBox } from 'element-plus'
 import useMainStore from '@/pinia/main'
-import { Store } from 'pinia'
-
 
 let mainStore: any
-
 
 // 提示信息
 const notify = (title:string, message:string, type: NotifyType) => {

@@ -8,10 +8,11 @@ import directive from './utils/directive.ts'
 import elementPlus from './utils/elementPlus.ts'
 
 // 静态资源
-import 'element-plus/dist/index.css'
-import './assets/iconfont/iconfont.js'
-import './assets/iconfont/iconfont.css'
-import './style.scss'
+// import './assets/theme/light.scss'
+// import 'element-plus/dist/index.css' // elementplus 样式
+import './assets/iconfont/iconfont.js' // 图标
+import './assets/iconfont/iconfont.css' // 图标
+import './style.scss' // 自定义全局样式
 
 // 组件
 import App from './App.vue'
