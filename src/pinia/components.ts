@@ -6,7 +6,7 @@
 import { defineStore } from 'pinia'
 import { componentsStore } from '@/types/components'
 import { v4 as uuid } from 'uuid'
-export default defineStore('components', {
+const useComponnetsStore = defineStore('components', {
   state: ():componentsStore => ({
     menus: [], // 组件菜单列表
     actived: '', // 选中的菜单_id
@@ -33,7 +33,20 @@ export default defineStore('components', {
               label: '图片预览',
             }
           ]
+        },
+        {
+          id: uuid(),
+          name: 'animation',
+          label: '动画',
+          children: [
+            {
+              id: uuid(),
+              name: 'animation-text-expand',
+              label: '文字展开',
+            }
+          ]
         }
+
       ]
       this.actived = this.menus[0]?.children[0]?.id || ''
     },
@@ -44,3 +57,4 @@ export default defineStore('components', {
   }
 })
 
+export default useComponnetsStore

@@ -73,8 +73,9 @@ init()
     flex-shrink: 0;
     width: var(--aside-bar-width);
     height: 100%;
-    background-color: white;
-    transform: translateX(0)
+    background-color: var(--nav-bg-fill);
+    transform: translateX(0);
+    z-index: 1;
   }
   // 侧边栏收起样式（小屏幕初始化）
   // .aside-fold {

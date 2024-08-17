@@ -1,12 +1,12 @@
 // 公共颜色(颜色来源于 Flat UI https://designmodo.github.io/Flat-UI/)
 :root {
   --primary: #59bb9e;
-  --warning: #ebc645;
-  --cancel: #bec2c7;
-  --danger: #d75745;
   --success: #7bd393;
-  --info: #5297d5;
-  
+  --warning: #ebc645;
+  --danger: #f56c6c;
+  --error: #f56c6c;
+  --info: #909399;
+
   --grey-3: #333333;
   --grey-5: #555555;
   --grey-7: #777777;
@@ -20,10 +20,62 @@
   --box-showdow-right-bottom: 2px -2px 10px -4px var(--grey-b);
   --box-showdow-left-top: -2px 2px 10px -4px var(--grey-b);
 
+  // 文字大小
   --ft_min: 12px;
   --ft_normal: 14px;
   --ft_large: 16px;
 
+  // elementplus配色
+  --el-color-primary: #59bb9e;
+  --el-color-primary-dark-2: #a7eacc;
+  --el-color-primary-light-3: #94d0b5;
+  --el-color-primary-light-5: #719d8a;
+  --el-color-primary-light-7: #5f8574;
+  --el-color-primary-light-8: #4c6b5e;
+  --el-color-primary-light-9: #3a5248;
+  --el-color-success: #7bd393;
+  --el-color-success-dark-2: #c4fdc3;
+  --el-color-success-light-3: #b2e8b0;
+  --el-color-success-light-5: #8bb589;
+  --el-color-success-light-7: #779c76;
+  --el-color-success-light-8: #648363;
+  --el-color-success-light-9: #51694f;
+  --el-color-warning: #ebc645;
+  --el-color-warning-dark-2: #fdf384;
+  --el-color-warning-light-3: #f9de79;
+  --el-color-warning-light-5: #c7b161;
+  --el-color-warning-light-7: #ad9c55;
+  --el-color-warning-light-8: #958548;
+  --el-color-warning-light-9: #7b6f3c;
+  --el-color-danger: #f56c6c;
+  --el-color-danger-light-3: #b25252;
+  --el-color-danger-light-5: #854040;
+  --el-color-danger-light-7: #582e2e;
+  --el-color-danger-light-8: #412626;
+  --el-color-danger-light-9: #2b1d1d;
+  --el-color-danger-dark-2: #f78989;
+  --el-color-error: #f56c6c;
+  --el-color-error-light-3: #b25252;
+  --el-color-error-light-5: #854040;
+  --el-color-error-light-7: #582e2e;
+  --el-color-error-light-8: #412626;
+  --el-color-error-light-9: #2b1d1d;
+  --el-color-error-dark-2: #f78989;
+  --el-color-info: #909399;
+  --el-color-info-light-3: #6b6d71;
+  --el-color-info-light-5: #525457;
+  --el-color-info-light-7: #393a3c;
+  --el-color-info-light-8: #2d2d2f;
+  --el-color-info-light-9: #202121;
+  --el-color-info-dark-2: #a6a9ad;
+
+  // 自定义
+  --nav-bg-fill: white;
+}
+
+html {
+  color: white;
+  // color: var(--el-text-color-primary);
 }
 
 

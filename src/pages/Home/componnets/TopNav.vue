@@ -47,6 +47,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
+  color: var(--el-text-color-primary);
   .left {
     min-width: 300px;
     height: 100%;

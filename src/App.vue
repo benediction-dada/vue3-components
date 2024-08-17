@@ -3,10 +3,11 @@ import { onUnmounted,watch } from 'vue';
 import useMainStore from '@/pinia/main'
 import useComponentsStore from '@/pinia/components'
 import { ThemeType } from './types/main';
-import '@/assets/theme/light.scss'
 
-const mainStore = useMainStore()
-const componentsStore = useComponentsStore()
+const mainStore = useMainStore() // 主仓库
+const componentsStore = useComponentsStore() // 组件仓库
+
+
 
 // 初始化主仓库
 mainStore.init()
@@ -18,7 +19,7 @@ watch(() => mainStore.themeType, (newVal) => {
 })
 
 const themeChange = async (themeType:ThemeType) => {
-  // 这里写主题更换代码
+  mainStore.toggleDark()
 }
 
 
@@ -33,4 +34,5 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
+
 </style>

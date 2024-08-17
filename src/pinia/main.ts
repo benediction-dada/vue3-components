@@ -7,6 +7,19 @@ import { defineStore } from 'pinia'
 import { v4 as uuid } from 'uuid'
 import { MainState, ThemeType } from '@/types/main.ts'
 import $config from '@/assets/js/config'
+import { useDark, useToggle }  from '@vueuse/core'
+
+
+const isDark = useDark({
+  // 存储到localStorage/sessionStorage中的Key 根据自己的需求更改
+  storageKey: 'themeStatus',
+  // 暗黑class名字
+  valueDark: 'dark',
+  // 高亮class名字
+  valueLight: 'light',
+})
+isDark.value = false // 默认为light模式
+const toggleDark = useToggle(isDark)
 
 const useMainStore = defineStore('main', {
   state: ():MainState => ({
@@ -59,8 +72,8 @@ const useMainStore = defineStore('main', {
     unstall_WindowListen() {
       window.addEventListener('resize', this.ListenScreen)
     },
-
-
+    // 主题切换
+    toggleDark,
     set_themeType(type: ThemeType) {
       this.themeType = type
     }

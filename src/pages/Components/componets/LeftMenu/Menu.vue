@@ -1,21 +1,29 @@
 <script setup lang="ts">
 import useComponnetsStore from '@/pinia/components';
-const mainStore = useComponnetsStore()
-const menus = mainStore.menus
+import { componentsItem } from '@/types/components';
+const componentsStore = useComponnetsStore()
+const menus = componentsStore.menus
+
+const changeModule = (item:componentsItem) => {
+  componentsStore.set_actived(item.id)
+}
 
 </script>
 <template>
   <!-- 菜单列表（不折叠， 组名不可点击） -->
   <div class="menu-list">
-    <div v-for="menuGroup in menus" :key="menuGroup.id" class="group">
+    <div v-for="componentsGroup in menus" :key="componentsGroup.id" class="group">
       <!-- 标题 -->
       <div class="title">
-        <span>{{ menuGroup.label }}</span>
-        <span>（{{ menuGroup.name }}）</span>
+        <span>{{ componentsGroup.label }}</span>
+        <span>（{{ componentsGroup.name }}）</span>
       </div>
       <!-- 列表 -->
-       <div class="item" :class="{ 'active_item': menu.id === mainStore.actived }" v-for="menu in menuGroup.children" :key="menu.id">
-        <span>{{ menu.label }}</span>
+       <div class="item"
+        :class="{ 'active_item': component.id === componentsStore.actived }"
+        v-for="component in componentsGroup.children" :key="component.id"
+        @click="() => changeModule(component)">
+        <span>{{ component.label }}</span>
        </div>
     </div>
   </div>
@@ -28,6 +36,7 @@ const menus = mainStore.menus
     .group {
       padding-top: 24px;
       .title {
+        color: var(--el-text-color-primary);
         font-size: var(--ft_large);
         font-weight: 700;
         margin-bottom: 8px;
@@ -37,6 +46,7 @@ const menus = mainStore.menus
         padding: 10px 16px;
         line-height: 1.5;
         font-size: var(--ft_normal);
+        color: var(--el-text-color-primary);
         cursor: pointer;
         &:hover {
           color: var(--primary);
