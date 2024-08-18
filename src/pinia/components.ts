@@ -4,15 +4,21 @@
  */
 
 import { defineStore } from 'pinia'
-import { componentsStore } from '@/types/components'
+import { componentsStore, componentsItem } from '@/types/components'
 import { v4 as uuid } from 'uuid'
+
+import AnimationTextExpand from '@/modules/AnimationTextExpand/index.vue'
+import ImagePreview from '@/modules/ImagePreview/index.vue'
+
 const useComponnetsStore = defineStore('components', {
   state: ():componentsStore => ({
     menus: [], // 组件菜单列表
     actived: '', // 选中的菜单_id
+    activedItem: null
   }),
   getters: {
-    get_menus: state => state.menus
+    get_menus: state => state.menus,
+    get_activedItem: state => state.activedItem
   },
   actions: {
     // 初始化
@@ -31,6 +37,7 @@ const useComponnetsStore = defineStore('components', {
               id: uuid(),
               name: 'image_preview',
               label: '图片预览',
+              component: ImagePreview
             }
           ]
         },
@@ -43,16 +50,19 @@ const useComponnetsStore = defineStore('components', {
               id: uuid(),
               name: 'animation-text-expand',
               label: '文字展开',
+              component: AnimationTextExpand
             }
           ]
         }
 
       ]
       this.actived = this.menus[0]?.children[0]?.id || ''
+      this.activedItem = this.menus[0]?.children[0] || null
     },
 
-    set_actived(_id:string) {
-      this.actived =_id
+    set_actived(item: componentsItem) {
+      this.actived =item.id
+      this.activedItem = item
     }
   }
 })

@@ -1,6 +1,7 @@
 export interface componentsStore {
   menus: componentsGroup[],
-  actived: string
+  actived: string,
+  activedItem: null | componentsItem
 }
 
 export interface componentsGroup {
@@ -14,4 +15,5 @@ export interface componentsItem {
   id: string,
   name: string,
   label: string,
+  component: any
 }

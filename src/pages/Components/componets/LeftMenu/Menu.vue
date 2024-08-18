@@ -5,7 +5,7 @@ const componentsStore = useComponnetsStore()
 const menus = componentsStore.menus
 
 const changeModule = (item:componentsItem) => {
-  componentsStore.set_actived(item.id)
+  componentsStore.set_actived(item)
 }
 
 </script>

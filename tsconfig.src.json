@@ -26,9 +26,9 @@
     /* self */
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
     },
     "noImplicitThis": false, // this类型可以使隐式的any
   },
-  "include": ["src/**/*.ts", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.vue", "vite-env.d.ts"]
 }

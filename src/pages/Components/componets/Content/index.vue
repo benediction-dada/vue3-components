@@ -1,15 +1,17 @@
 <script lang="ts" setup>
+  import { computed } from 'vue'
   import useComponnetsStore from '@/pinia/components'
   import useMainStore from '@/pinia/main'
+
   const mainStore = useMainStore()
   const componentsStore = useComponnetsStore()
-  
+  const activedItem = computed(() => componentsStore.activedItem)
 
 </script>
 <template>
   <article>
     <section>
-
+      <component :is="activedItem?.component || 'div'"></component>
     </section>
     <aside >
 
