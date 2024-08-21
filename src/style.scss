@@ -17,8 +17,10 @@
   --aside-bar-width: 270px; // 侧边栏宽度
 
   // 公共阴影盒子
-  --box-showdow-right-bottom: 2px -2px 10px -4px var(--grey-b);
-  --box-showdow-left-top: -2px 2px 10px -4px var(--grey-b);
+  --box-showdow : 2px 2px 10px 4px var(--grey-3);
+  --box-showdow-right-bottom: 2px -2px 10px -4px var(--grey-3);
+  --box-showdow-left-top: -2px 2px 10px -4px var(--grey-3);
+
 
   // 文字大小
   --ft_min: 12px;
@@ -26,49 +28,48 @@
   --ft_large: 16px;
 
   // elementplus配色
-  --el-color-primary: #59bb9e;
-  --el-color-primary-dark-2: #a7eacc;
-  --el-color-primary-light-3: #94d0b5;
-  --el-color-primary-light-5: #719d8a;
-  --el-color-primary-light-7: #5f8574;
-  --el-color-primary-light-8: #4c6b5e;
-  --el-color-primary-light-9: #3a5248;
-  --el-color-success: #7bd393;
-  --el-color-success-dark-2: #c4fdc3;
-  --el-color-success-light-3: #b2e8b0;
-  --el-color-success-light-5: #8bb589;
-  --el-color-success-light-7: #779c76;
-  --el-color-success-light-8: #648363;
-  --el-color-success-light-9: #51694f;
-  --el-color-warning: #ebc645;
-  --el-color-warning-dark-2: #fdf384;
-  --el-color-warning-light-3: #f9de79;
-  --el-color-warning-light-5: #c7b161;
-  --el-color-warning-light-7: #ad9c55;
-  --el-color-warning-light-8: #958548;
-  --el-color-warning-light-9: #7b6f3c;
-  --el-color-danger: #f56c6c;
-  --el-color-danger-light-3: #b25252;
-  --el-color-danger-light-5: #854040;
-  --el-color-danger-light-7: #582e2e;
-  --el-color-danger-light-8: #412626;
-  --el-color-danger-light-9: #2b1d1d;
-  --el-color-danger-dark-2: #f78989;
-  --el-color-error: #f56c6c;
-  --el-color-error-light-3: #b25252;
-  --el-color-error-light-5: #854040;
-  --el-color-error-light-7: #582e2e;
-  --el-color-error-light-8: #412626;
-  --el-color-error-light-9: #2b1d1d;
-  --el-color-error-dark-2: #f78989;
-  --el-color-info: #909399;
-  --el-color-info-light-3: #6b6d71;
-  --el-color-info-light-5: #525457;
-  --el-color-info-light-7: #393a3c;
-  --el-color-info-light-8: #2d2d2f;
-  --el-color-info-light-9: #202121;
-  --el-color-info-dark-2: #a6a9ad;
-
+  --el-color-primary: #59bb9e !important;
+  --el-color-primary-dark-2: #a7eacc !important;
+  --el-color-primary-light-3: #94d0b5 !important;
+  --el-color-primary-light-5: #719d8a !important;
+  --el-color-primary-light-7: #5f8574 !important;
+  --el-color-primary-light-8: #4c6b5e !important;
+  --el-color-primary-light-9: #3a5248 !important;
+  --el-color-success: #7bd393 !important;
+  --el-color-success-dark-2: #c4fdc3 !important;
+  --el-color-success-light-3: #b2e8b0 !important;
+  --el-color-success-light-5: #8bb589 !important;
+  --el-color-success-light-7: #779c76 !important;
+  --el-color-success-light-8: #648363 !important;
+  --el-color-success-light-9: #51694f !important;
+  --el-color-warning: #ebc645 !important;
+  --el-color-warning-dark-2: #fdf384 !important;
+  --el-color-warning-light-3: #f9de79 !important;
+  --el-color-warning-light-5: #c7b161 !important;
+  --el-color-warning-light-7: #ad9c55 !important;
+  --el-color-warning-light-8: #958548 !important;
+  --el-color-warning-light-9: #7b6f3c !important;
+  --el-color-danger: #f56c6c !important;
+  --el-color-danger-light-3: #b25252 !important;
+  --el-color-danger-light-5: #854040 !important;
+  --el-color-danger-light-7: #582e2e !important;
+  --el-color-danger-light-8: #412626 !important;
+  --el-color-danger-light-9: #2b1d1d !important;
+  --el-color-danger-dark-2: #f78989 !important;
+  --el-color-error: #f56c6c !important;
+  --el-color-error-light-3: #b25252 !important;
+  --el-color-error-light-5: #854040 !important;
+  --el-color-error-light-7: #582e2e !important;
+  --el-color-error-light-8: #412626 !important;
+  --el-color-error-light-9: #2b1d1d !important;
+  --el-color-error-dark-2: #f78989 !important;
+  --el-color-info: #909399 !important;
+  --el-color-info-light-3: #6b6d71 !important;
+  --el-color-info-light-5: #525457 !important;
+  --el-color-info-light-7: #393a3c !important;
+  --el-color-info-light-8: #2d2d2f !important;
+  --el-color-info-light-9: #202121 !important;
+  --el-color-info-dark-2: #a6a9ad !important;
   // 自定义
   --nav-bg-fill: white;
 }

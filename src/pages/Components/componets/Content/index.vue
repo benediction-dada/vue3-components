@@ -11,7 +11,9 @@
 <template>
   <article>
     <section>
-      <component :is="activedItem?.component || 'div'"></component>
+      <el-scrollbar style="height: 100%;">
+        <component :is="activedItem?.component || 'div'"></component>
+      </el-scrollbar>
     </section>
     <aside >
 

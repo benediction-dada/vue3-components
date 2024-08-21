@@ -12,7 +12,7 @@ import './assets/theme/dark.css' // 自定义暗黑样式
 import './style.scss' // 自定义全局样式
 import './assets/iconfont/iconfont.js' // 图标
 import './assets/iconfont/iconfont.css' // 图标
-import 'element-plus/dist/index.css' // elementplus 样式
+import '@/assets/theme/light_v1.scss' // elementplus 样式
 import 'element-plus/theme-chalk/dark/css-vars.css' // elementplus暗黑模式
 
 // 组件

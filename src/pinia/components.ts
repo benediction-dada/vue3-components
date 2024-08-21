@@ -6,6 +6,7 @@
 import { defineStore } from 'pinia'
 import { componentsStore, componentsItem } from '@/types/components'
 import { v4 as uuid } from 'uuid'
+import { markRaw } from 'vue'
 
 import AnimationTextExpand from '@/modules/AnimationTextExpand/index.vue'
 import ImagePreview from '@/modules/ImagePreview/index.vue'
@@ -37,7 +38,7 @@ const useComponnetsStore = defineStore('components', {
               id: uuid(),
               name: 'image_preview',
               label: '图片预览',
-              component: ImagePreview
+              component: markRaw(ImagePreview)
             }
           ]
         },
@@ -50,7 +51,7 @@ const useComponnetsStore = defineStore('components', {
               id: uuid(),
               name: 'animation-text-expand',
               label: '文字展开',
-              component: AnimationTextExpand
+              component: markRaw(AnimationTextExpand)
             }
           ]
         }
