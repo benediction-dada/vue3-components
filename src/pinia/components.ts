@@ -10,6 +10,7 @@ import { markRaw } from 'vue'
 
 import AnimationTextExpand from '@/modules/AnimationTextExpand/index.vue'
 import ImagePreview from '@/modules/ImagePreview/index.vue'
+import Snapshot from '@/modules/Snapshot/index.vue'
 
 const useComponnetsStore = defineStore('components', {
   state: ():componentsStore => ({
@@ -39,7 +40,13 @@ const useComponnetsStore = defineStore('components', {
               name: 'image_preview',
               label: '图片预览',
               component: markRaw(ImagePreview)
-            }
+            },
+            {
+              id: uuid(),
+              name: 'image_snapshot',
+              label: '截图组件',
+              component: markRaw(Snapshot)
+            },
           ]
         },
         {

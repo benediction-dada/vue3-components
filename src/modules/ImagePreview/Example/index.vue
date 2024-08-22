@@ -254,7 +254,6 @@ onUnmounted(() => {
     <canvas :id="id"
       width="100%"
       height="100%"
-      style="border: 1px solid;"
       ref="canvasRef"
       @mousedown="onMouseDown"
       ></canvas>
@@ -266,6 +265,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   position: relative;
+  box-sizing: border-box;
   // 缩放比
   .scale {
     background-color: rgba($color: #ffffff, $alpha: .4);
