@@ -9,12 +9,13 @@
 type SnapshotState = 'none' | 'start' // 初始状态 | 开始状态 | 
 
 import { onMounted, onUnmounted, ref } from 'vue'
+import Masking from './components/Masking.vue';
 
-const _state = ref<SnapshotState>('none') // 截图运行状态
+const _state = ref<SnapshotState>('start') // 截图运行状态
 
 // 案件监听事件
 const listenKeyDown = (event: KeyboardEvent) => {
-  console.log(event)
+  console.log(event.shiftKey && ['x', 'X'].includes(event.key))
   if(event.shiftKey && ['x', 'X'].includes(event.key)) {
     _state.value = 'start'
   }
@@ -23,14 +24,6 @@ const listenKeyDown = (event: KeyboardEvent) => {
     _state.value = 'none'
   }
 }
-
-// 鼠标按下事件
-const listenMousedown = (event: MouseEvent) => {}
-// 鼠标移动事件
-const listenMouseMove = (event: MouseEvent) => {}
-// 鼠标松开事件
-const listenMouseup = (event: MouseEvent) => {}
-
 
 const init = () => {
   window.addEventListener('keydown', listenKeyDown)
@@ -54,13 +47,7 @@ onUnmounted(() => {
 <template>
   <div class="snapshot-container">
     <slot></slot>
-    <div class="snapshot-model" v-show="['start'].includes(_state)">
-
-      <!-- 工具 -->
-      <div class="left-top-info">
-        ESC键退出截图模式
-      </div>
-    </div>
+    <Masking v-if="['start'].includes(_state)"></Masking>
   </div>
 </template>
 
@@ -75,25 +62,5 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   position: relative;
-
-  // 蒙版
-  .snapshot-model {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-
-    .left-top-info {
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      color: white;
-      font-size: 12px;
-      opacity: .8;
-    }
-  }
 }
 </style>

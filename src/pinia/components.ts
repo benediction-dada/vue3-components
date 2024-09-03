@@ -9,8 +9,10 @@ import { v4 as uuid } from 'uuid'
 import { markRaw } from 'vue'
 
 import AnimationTextExpand from '@/modules/AnimationTextExpand/index.vue'
+import AnimationLoading from '@/modules/AnimationLoading/index.vue'
+
 import ImagePreview from '@/modules/ImagePreview/index.vue'
-import Snapshot from '@/modules/Snapshot/index.vue'
+import ImageSnapshot from '@/modules/ImageSnapshot/index.vue'
 
 const useComponnetsStore = defineStore('components', {
   state: ():componentsStore => ({
@@ -45,7 +47,7 @@ const useComponnetsStore = defineStore('components', {
               id: uuid(),
               name: 'image_snapshot',
               label: '截图组件',
-              component: markRaw(Snapshot)
+              component: markRaw(ImageSnapshot)
             },
           ]
         },
@@ -56,16 +58,22 @@ const useComponnetsStore = defineStore('components', {
           children: [
             {
               id: uuid(),
-              name: 'animation-text-expand',
-              label: '文字展开',
+              name: 'animation-text',
+              label: '文字',
               component: markRaw(AnimationTextExpand)
-            }
+            },
+            {
+              id: uuid(),
+              name: 'animation-loading',
+              label: 'Loading',
+              component: markRaw(AnimationLoading)
+            },
           ]
         }
 
       ]
-      this.actived = this.menus[0]?.children[0]?.id || ''
-      this.activedItem = this.menus[0]?.children[0] || null
+      this.actived = this.menus[0]?.children[1]?.id || ''
+      this.activedItem = this.menus[0]?.children[1] || null
     },
 
     set_actived(item: componentsItem) {
