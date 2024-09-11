@@ -182,44 +182,21 @@
     function setPointer(type: string) {
       const canvas = canvasRef.value as HTMLCanvasElement
       if(!canvas) return
-      switch(type) {
-        case 'cornerTopRight': {
-          canvas.style.cursor = 'nw-resize'
-          break
-        }
-        case 'cornerTopLeft': {
-          canvas.style.cursor = 'ne-resize'
-          break
-        }
-        case 'horizationLine': {
-          canvas.style.cursor = 's-resize'
-          break
-        }
-        case 'verticalLine': {
-          canvas.style.cursor = 'w-resize'
-          break
-        }
-        case 'inner': {
-          canvas.style.cursor = 'mover'
-          break
-        }
-        case 'outerTop': {
-          canvas.style.cursor = 's-resize'
-          break
-        }
-        case 'outerRight': {
-          canvas.style.cursor = 'w-resize'
-          break
-        }
-        case 'outerBottom': {
-          canvas.style.cursor = 's-resize'
-          break
-        }
-        case 'outerLeft': {
-          canvas.style.cursor = 'w-resize'
-          break
-        }
+      let mousePointerMap: {
+        cornerTopLeft: '', // 左上
+        cornerTopRight: '', // 右上
+        cornerTopLeft: '', // 左下
+        cornerTopLeft: '', // 右下
+        horizationLine: 'ew-resize', // 水平
+        verticalLine: 'ns-resize', // 垂直
+        inner: 'move', // 内部拖拽
+        outerTop: 'n-resize', // 外上
+        outerRight: 'e-resize', // 外右
+        outerBottom: 's-resize', // 外下
+        outerLeft: 'w-resize', // 
       }
+      canvas.style.cursor = mousePointerMap[type] || default
+      
     }
   }
 
