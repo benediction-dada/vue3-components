@@ -33,7 +33,7 @@ const activedItem = computed(() => componentsStore.activedItem)
     font-size: 32px;
     display: flex;
     justify-content: center;
-    animation: text-expand 2s forwards infinite;
+    animation: text1-expand 2s forwards infinite;
     @keyframes text1-expand {
       0% {
         letter-spacing: -30px;

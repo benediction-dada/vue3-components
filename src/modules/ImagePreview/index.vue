@@ -16,14 +16,14 @@ const dialog = reactive({
   title: '预览图片',
   url: ''
 })
-const preview = file => {
+const preview = (file: any) => {
   dialog.show = true
   dialog.url = file.url
 }
 
 </script>
 <template>
-  <moduleTitle type="h5" :title="activedItem.label"></moduleTitle>
+  <moduleTitle type="h5" :title="activedItem?.label"></moduleTitle>
   <!-- 使用案例 -->
   <!-- 外层给个容器(图片预览块跟随容器大小改变) -->
   <div style="height: 400px; margin-bottom: 24px;">

@@ -259,11 +259,13 @@ const centerPoint = (borderLen: number): Point => {
       }
     }
     .circle2 {
-      animation: loading6_ani2 linear infinite 3s;
-      stroke-dashoffset: 0;
+      animation: loading6_ani2 linear  infinite 2s;
+      stroke-dashoffset: calc(PI * 2 * 18);
+      transform: rotate(180deg);
+      transform-origin: center;
       @keyframes loading6_ani2 {
         to {
-          stroke-dashoffset: calc(PI * 2 * 18) / 2;
+          stroke-dashoffset: 0;
         }
       }
     }
