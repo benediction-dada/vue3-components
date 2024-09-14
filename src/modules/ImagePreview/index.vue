@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { Plus, ZoomIn } from '@element-plus/icons-vue'
 import { reactive, ref } from 'vue'
 import moduleTitle from '../components/moduleTitle.vue'

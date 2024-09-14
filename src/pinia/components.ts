@@ -8,6 +8,8 @@ import { componentsStore, componentsItem } from '@/types/components'
 import { v4 as uuid } from 'uuid'
 import { markRaw } from 'vue'
 
+import CssBaseCursor from '@/modules/cssBaseCursor/index.vue'
+
 import AnimationTextExpand from '@/modules/AnimationTextExpand/index.vue'
 import AnimationLoading from '@/modules/AnimationLoading/index.vue'
 
@@ -32,6 +34,19 @@ const useComponnetsStore = defineStore('components', {
     // 初始化组件列表
     init_menus() {
       this.menus = [
+        {
+          id: uuid(),
+          name: 'css_base',
+          label: 'css基础',
+          children: [
+            {
+              id: uuid(),
+              name: 'css_base_cursor',
+              label: '鼠标手势',
+              component: markRaw(CssBaseCursor)
+            }
+          ]
+        },
         {
           id: uuid(),
           name: 'image',
@@ -72,8 +87,8 @@ const useComponnetsStore = defineStore('components', {
         }
 
       ]
-      this.actived = this.menus[0]?.children[1]?.id || ''
-      this.activedItem = this.menus[0]?.children[1] || null
+      this.actived = this.menus[0]?.children[0]?.id || ''
+      this.activedItem = this.menus[0]?.children[0] || null
     },
 
     set_actived(item: componentsItem) {

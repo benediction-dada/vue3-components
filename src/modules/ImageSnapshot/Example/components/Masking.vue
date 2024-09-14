@@ -194,7 +194,7 @@
         outerTop: 'n-resize', // 外上
         outerRight: 'e-resize', // 外右
         outerBottom: 's-resize', // 外下
-        outerLeft: 'w-resize', // 
+        outerLeft: 'w-resize', // 外左
       }
       canvas.style.cursor = mousePointerMap[type]
       
