@@ -8,6 +8,7 @@
     x: number,
     y: number
   }
+  type PointerType = 'cornerTopLeft' | 'cornerTopRight' | 'cornerBottomLeft' | 'cornerBottomRight' | 'horizationLine' | 'verticalLine' | 'inner' | 'outerTop' | 'outerRight' | 'outerBottom' | 'outerLeft';
 
   import { onBeforeUnmount, onMounted, ref } from 'vue';
 
@@ -179,10 +180,10 @@
       return Math.sqrt(Math.pow((p1.x - p2.x), 2) + Math.pow((p1.y - p2.y), 2))
     }
     // 设置鼠标样式
-    function setPointer(type: string) {
+    function setPointer(type: PointerType) {
       const canvas = canvasRef.value as HTMLCanvasElement
       if(!canvas) return
-      let mousePointerMap: {
+      let mousePointerMap:{[key in PointerType]: string} = {
         cornerTopLeft: '', // 左上
         cornerTopRight: '', // 右上
         cornerBottomLeft: '', // 左下
@@ -195,7 +196,7 @@
         outerBottom: 's-resize', // 外下
         outerLeft: 'w-resize', // 
       }
-      canvas.style.cursor = mousePointerMap[type] || default
+      canvas.style.cursor = mousePointerMap[type]
       
     }
   }
