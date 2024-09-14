@@ -185,8 +185,8 @@
       let mousePointerMap: {
         cornerTopLeft: '', // 左上
         cornerTopRight: '', // 右上
-        cornerTopLeft: '', // 左下
-        cornerTopLeft: '', // 右下
+        cornerBottomLeft: '', // 左下
+        cornerBottomRight: '', // 右下
         horizationLine: 'ew-resize', // 水平
         verticalLine: 'ns-resize', // 垂直
         inner: 'move', // 内部拖拽
