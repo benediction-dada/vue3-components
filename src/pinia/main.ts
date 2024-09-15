@@ -9,7 +9,6 @@ import { MainState, ThemeType } from '@/types/main.ts'
 import $config from '@/assets/js/config'
 import { useDark, useToggle }  from '@vueuse/core'
 
-
 const isDark = useDark({
   // 存储到localStorage/sessionStorage中的Key 根据自己的需求更改
   storageKey: 'themeStatus',
@@ -24,6 +23,7 @@ const toggleDark = useToggle(isDark)
 const useMainStore = defineStore('main', {
   state: ():MainState => ({
     menuList: [], // 导航菜单
+    activeMenu: null, // 高亮菜单
     isSmallScreen: false, // 判断是否是小屏幕
     themeType: 'light', // 主题类型  light | dark
 
@@ -50,11 +50,19 @@ const useMainStore = defineStore('main', {
     },
     // 初始化菜单
     init_menuList() {
-      this.menuList = [{
-        id: uuid(),
-        label: '组件',
-        router: '/components'
-      }]
+      this.menuList = [
+        {
+          id: uuid(),
+          label: '组件',
+          path: '/components'
+        },
+        {
+          id: uuid(),
+          label: '3D尝试',
+          path: '/threeDTry'
+        }
+      ]
+      this.activeMenu = this.menuList[0]
     },
     // 初始化参数
     initParams() {

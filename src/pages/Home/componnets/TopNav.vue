@@ -1,11 +1,16 @@
 <script lang="ts" setup>
+  import { useRouter } from 'vue-router'
   import useMainStore from '@/pinia/main.ts'
   import { MenuItem } from '@/types/main.ts'
   const mainStore = useMainStore()
-  const menuList = mainStore.menuList
+  const router = useRouter()
 
-  // 默认选中菜单
-  let activeMenu = menuList.find((menu:MenuItem) => menu.router === '/overview')
+  const menuList = mainStore.menuList
+  
+  const changeMenu = (item: MenuItem) => {
+    mainStore.activeMenu = item
+    router.push({ path: item.path })
+  }
 </script>
 <template>
   <nav>
@@ -13,7 +18,11 @@
     <div class="right">
       <!-- 菜单 -->
       <div 
-      v-for="menu in menuList" :key="menu.id" class="item" :class="{actived: activeMenu?.router === menu.router}">
+      v-for="menu in menuList"
+      :key="menu.id"
+      class="item"
+      :class="{actived: mainStore?.activeMenu?.path === menu.path}"
+      @click="changeMenu(menu)">
         {{ menu.label }}
       </div>
       <!-- 主题开关 -->
@@ -23,11 +32,11 @@
         inactive-value="dark">
         <!-- light -->
         <template #active-action>
-          <i class="iconfont icon-github"></i>
+          <i class="iconfont icon-sun"></i>
         </template>
         <!-- dark -->
         <template #inactive-action>
-          <i class="iconfont icon-customer-fill"></i>
+          <i class="iconfont icon-moono"></i>
         </template>
       </el-switch>
       <!-- github链接 -->

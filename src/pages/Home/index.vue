@@ -7,11 +7,14 @@
 
 <script setup lan="scss">
 import TopNav from './componnets/TopNav.vue';
+import { useRoute } from 'vue-router'
 </script>
 <template>
   <main>
     <!-- 导航条 -->
     <TopNav></TopNav>
-    <router-view></router-view>
+    <section>
+      <router-view></router-view>
+    </section>
   </main>
 </template>

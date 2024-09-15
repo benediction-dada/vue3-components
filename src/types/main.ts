@@ -1,5 +1,6 @@
 export interface MainState {
   menuList: MenuItem[],
+  activeMenu: MenuItem | null
   isSmallScreen: Boolean,
   themeType: ThemeType
 
@@ -9,7 +10,7 @@ export interface MainState {
 export interface MenuItem {
   id: string,
   label: string,
-  router: string,
+  path: string,
 }
 
 export type ThemeType = 'light' | 'dark'

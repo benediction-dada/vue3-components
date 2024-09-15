@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "837077",
+      "name": "moon-o",
+      "font_class": "moono",
+      "unicode": "e791",
+      "unicode_decimal": 59281
+    },
+    {
+      "icon_id": "10166345",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "14342037",
+      "name": "sun",
+      "font_class": "sun",
+      "unicode": "e7c5",
+      "unicode_decimal": 59333
+    },
+    {
+      "icon_id": "21281343",
+      "name": "menu-menu",
+      "font_class": "menu-menu",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
       "icon_id": "10793054",
       "name": "github",
       "font_class": "github",

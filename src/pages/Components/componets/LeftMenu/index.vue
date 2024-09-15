@@ -60,7 +60,7 @@ init()
   <!-- 侧边栏小屏幕展开按钮块 -->
   <section v-if="mainStore.isSmallScreen">
     <div class="item" @click="menuExpandClick">
-      <i class="iconfont icon-github"></i>
+      <i class="iconfont icon-menu-menu"></i>
       <span>菜单</span>
     </div>
   </section>

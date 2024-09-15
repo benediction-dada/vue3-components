@@ -15,7 +15,6 @@ const _state = ref<SnapshotState>('start') // 截图运行状态
 
 // 案件监听事件
 const listenKeyDown = (event: KeyboardEvent) => {
-  console.log(event.shiftKey && ['x', 'X'].includes(event.key))
   if(event.shiftKey && ['x', 'X'].includes(event.key)) {
     _state.value = 'start'
   }
