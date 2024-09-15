@@ -15,11 +15,19 @@ const routes = [
     redirect: '/components',
     children: [
       {
+        name: '组件',
         path: '/components',
-        component: Components
+        component: Components,
+        meta: {
+          isMiniServer: false
+        },
       },
       {
+        name: '3D尝试',
         path: '/threeDTry',
+        meta: {
+          isMiniServer: true
+        },
         component: ThreeDTry
       }
     ]

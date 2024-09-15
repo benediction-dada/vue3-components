@@ -10,6 +10,10 @@ declare module '*.vue' {
 }
 
 declare module 'uuid'
+declare module 'qiankun' {
+  export function registerMicroApps(apps: any[]): void;
+  export function start(options?: any): void;
+}
 declare global {
   interface Window {
     $notify: (title: string, message: string, type: NotifyType) => void,

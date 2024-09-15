@@ -28,6 +28,7 @@
     "paths": {
       "@/*": ["src/*"],
     },
+    "typeRoots": ["node_modules/@types"],
     "noImplicitThis": false, // this类型可以使隐式的any
   },
   "include": ["src/**/*.ts", "src/**/*.vue", "vite-env.d.ts"]

@@ -17,6 +17,7 @@ import 'element-plus/theme-chalk/dark/css-vars.css' // elementplus暗黑模式
 
 // 组件
 import App from './App.vue'
+import microApps from '@/microApps/index.ts'
 
 // 开始加载
 const app = createApp(App)
@@ -29,5 +30,7 @@ app.use(router)
 
 directive(app) // 注册指令
 elementPlus(app)// 注册Element-plus配置
+
+microApps() // 注册微服务
 
 app.mount('#app')
