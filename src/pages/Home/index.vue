@@ -20,7 +20,7 @@ const route = useRoute()
     </section>
     <!-- 微服务页面 -->
     <section v-if="route.meta.isMiniServer">
-      <div id="frameContainer"></div>
+      <div id="3d-frame-container"></div>
     </section>
   </main>
 </template>
