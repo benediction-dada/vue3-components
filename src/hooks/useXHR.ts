@@ -3,6 +3,8 @@
  * @description 基于XMLHttpRequest 对象 创建请求实例
  */
 
+type callback = (res: any) => any // 回调函数类型
+
 class XHR {
   private xhr: XMLHttpRequest
   constructor() {
@@ -86,6 +88,6 @@ class XHR {
   }
 }
 
-type callback = (res: any) => void 
-
-export default new XHR()
+export default () => ({
+  _http: new XHR()
+})
