@@ -1,15 +1,25 @@
 <script lang="ts" setup>
-import { computed, onMounted, onUnmounted, ref, nextTick } from 'vue'
+import { computed, onMounted, useTemplateRef, ref, nextTick } from 'vue'
+import usePageEvent from '@/hooks/usePageEvent'
 import { v4 as uuid } from 'uuid'
-const props = defineProps({
-  imageUrl: {
-    type: String,
-    default: '/page.png'
-  }
+
+interface Props { imageUrl?: string }
+
+const { addEventListener } = usePageEvent()
+const props = withDefaults(defineProps<Props>(), {
+  imageUrl: '/page.png'
 })
 const id = uuid() // 当前组件唯一标识
-const canvasRef = ref<HTMLCanvasElement | null>(null) //
-const imgRef = ref<HTMLImageElement | null>(null)
+
+const canvasRef = useTemplateRef('canvasRef') // 画布引用
+const imgRef = useTemplateRef('imgRef') // 图片引用
+const primaryColor = 
+  getComputedStyle(document.documentElement)
+  .getPropertyValue('--primary').trim() // 主题色
+
+
+
+
 // 添加拖拽方法
 const isDragging = ref(false) // 是否开始拖拽
 const isMouseDown = ref(false) // 是否选中状态
@@ -26,10 +36,7 @@ let drawHeight = 0
 // 图片在画布中的位置
 let x = 0
 let y = 0
-// 主题色
-const primaryColor = 
-  getComputedStyle(document.documentElement)
-  .getPropertyValue('--primary').trim()
+
 
 // 缩放比
 const scale = ref(1)
@@ -207,16 +214,15 @@ const onWheel = (event: WheelEvent) => {
 
 
 const init = () => {
+  // 事件添加
   const canvas = canvasRef.value
   if(!canvas) return
-  // 尺寸自适应方法
-  window.addEventListener('resize', resizeCanvas)
-  canvas.addEventListener('mousemove', onMouseMove)
-  canvas.addEventListener('mouseup', onMouseUp)
-  canvas.addEventListener('wheel', onWheel, { passive: false });
+  addEventListener(canvas, 'mousemove', onMouseMove)
+  addEventListener(canvas, 'mouseup', onMouseUp)
+  addEventListener(canvas, 'wheel', onWheel, { passive: false })
   
-  const ctx = canvas.getContext('2d')
-  if (!ctx) return
+  addEventListener(document, 'resize', resizeCanvas)
+  
   // 初始化图片
   const img = imgRef.value
   if (!img) return
@@ -232,15 +238,6 @@ const init = () => {
 
 onMounted(() => {
   init()
-})
-
-onUnmounted(() => {
-  document.removeEventListener('resize', resizeCanvas)
-  const canvas = canvasRef.value
-  if(!canvas) return
-  canvas.removeEventListener('mousemove', onMouseMove)
-  canvas.removeEventListener('mouseup', onMouseUp)
-  canvas.removeEventListener('wheel', onWheel);
 })
 
 </script>
