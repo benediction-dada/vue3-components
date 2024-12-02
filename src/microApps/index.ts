@@ -1,8 +1,16 @@
 import { registerMicroApps, addGlobalUncaughtErrorHandler, start } from 'qiankun'
-import apps from './apps.ts'
 import useMessage from '@/hooks/useMessage'
 
 const { _message } = useMessage()
+const apps:any = [
+  {
+    name: '3d-react',
+    entry: 'localhost:7013',
+    container: '#3d-frame-container',
+    activeRule: '/threeDTry'
+  }
+]
+
 // 注册apps
 registerMicroApps(apps, {
   beforeLoad: (app: any) => {
