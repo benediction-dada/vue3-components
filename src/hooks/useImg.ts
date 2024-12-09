@@ -2,7 +2,6 @@
  * @author yuda
  * @description 返回图片处理方法
  */
-import type { Ref } from 'vue';
 
 interface Rect {
   width: number,

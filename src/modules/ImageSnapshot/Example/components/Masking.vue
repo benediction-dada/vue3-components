@@ -10,8 +10,6 @@
   }
   type PointerType = 'cornerTopLeft' | 'cornerTopRight' | 'cornerBottomLeft' | 'cornerBottomRight' | 'horizationLine' | 'verticalLine' | 'inner' | 'outerTop' | 'outerRight' | 'outerBottom' | 'outerLeft';
 
-  import { onBeforeUnmount, onMounted, ref } from 'vue';
-
   const canvasRef = ref<HTMLCanvasElement>()
   const isDropState = ref<boolean>(false) // 拖拽状态
   let startPoint:Point = { x: -1, y: -1 } // 开始点位

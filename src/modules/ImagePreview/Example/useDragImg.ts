@@ -1,5 +1,3 @@
-import { ref, computed, Ref } from 'vue'
-
 interface Point {
   x: number,
   y: number

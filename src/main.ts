@@ -1,7 +1,4 @@
 // 引入
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-
 import router from './router'
 import config from './assets/js/config.ts'
 import directive from './utils/directive.ts'

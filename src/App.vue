@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { onUnmounted,watch } from 'vue';
 import useMainStore from '@/pinia/main'
 import useComponentsStore from '@/pinia/components'
 import { ThemeType } from './types/main';

@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-  import { useRouter } from 'vue-router'
   import useMainStore from '@/pinia/main.ts'
   import { MenuItem } from '@/types/main.ts'
   const mainStore = useMainStore()

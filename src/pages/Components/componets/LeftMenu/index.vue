@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import Menu from './Menu.vue';
 import useMainStore from '@/pinia/main'
-import { ref, watch } from 'vue';
 
 const mainStore = useMainStore()
 

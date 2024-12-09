@@ -8,7 +8,6 @@
 
 type SnapshotState = 'none' | 'start' // 初始状态 | 开始状态 | 
 
-import { onMounted, onUnmounted, ref } from 'vue'
 import Masking from './components/Masking.vue';
 
 const _state = ref<SnapshotState>('start') // 截图运行状态

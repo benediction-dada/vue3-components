@@ -3,7 +3,6 @@
  * @description pinia仓库（存放项目基本信息）
  */
 
-import { defineStore } from 'pinia'
 import { v4 as uuid } from 'uuid'
 import { MainState, ThemeType } from '@/types/main.ts'
 import $config from '@/assets/js/config'

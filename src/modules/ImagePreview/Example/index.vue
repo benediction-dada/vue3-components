@@ -5,7 +5,6 @@ interface Rect {
   height: number
 }
 type drawType = 'init' | 'scale' | 'default'
-import { onMounted, useTemplateRef, ref, nextTick } from 'vue'
 import { v4 as uuid } from 'uuid'
 
 import usePageEvent from '@/hooks/usePageEvent'

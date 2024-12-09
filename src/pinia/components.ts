@@ -3,10 +3,8 @@
  * @description pinia仓库（存放组件页面信息）
  */
 
-import { defineStore } from 'pinia'
 import { componentsStore, componentsItem } from '@/types/components'
 import { v4 as uuid } from 'uuid'
-import { markRaw } from 'vue'
 
 import CssBaseCursor from '@/modules/cssBaseCursor/index.vue'
 

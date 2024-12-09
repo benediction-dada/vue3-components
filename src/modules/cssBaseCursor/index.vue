@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { reactive, ref, computed } from 'vue'
 import moduleTitle from '../components/moduleTitle.vue'
 import useComponnetsStore from '@/pinia/components'
 import useMainStore from '@/pinia/main'

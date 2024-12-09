@@ -2,7 +2,6 @@
  * @author yuda
  * @description 返回添加页面级监听事件
  */
-import { onBeforeUnmount } from 'vue'
 
 type Callback = (...args: any[]) => void
 type EventType = 'resize' | 'click' | 'scroll' | 'mousemove' | 'mouseup' | 'wheel'

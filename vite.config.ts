@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import AutoImport from "unplugin-auto-import/vite"
 import { resolve } from 'path'
 
 export default defineConfig({
@@ -10,7 +11,15 @@ export default defineConfig({
       }
     },
   },
-  plugins: [vue()],
+  plugins: [
+    // vue 语法
+    vue(),
+    // 自动按需导入 API
+    AutoImport({
+      imports: ["vue", "vue-router", "pinia"],
+      dts: "src/types/auto/auto-imports.d.ts"
+    })
+  ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),

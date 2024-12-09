@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-  import { computed } from 'vue'
   import useComponnetsStore from '@/pinia/components'
   import useMainStore from '@/pinia/main'
 
