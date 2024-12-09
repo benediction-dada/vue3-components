@@ -1,6 +1,8 @@
 // 引入
 import router from './router'
 import directive from './utils/directive.ts'
+import microApps from '@/microApps/index.ts'
+import piniaPresist from 'pinia-plugin-persistedstate'
 
 // 静态资源
 import './assets/theme/dark.css' // 自定义暗黑样式
@@ -12,15 +14,17 @@ import 'element-plus/theme-chalk/dark/css-vars.css' // elementplus暗黑模式
 
 // 组件
 import App from './App.vue'
-import microApps from '@/microApps/index.ts'
 
+const pinia = createPinia()
+pinia.use(piniaPresist)
 // 开始加载
 const app = createApp(App)
-const pinia = createPinia()
-app.use(pinia)
-app.use(router)
 
 directive(app) // 注册指令
 microApps() // 注册微服务
 
-app.mount('#app')
+app.use(pinia).use(router)
+
+router.isReady().then(() => {
+  app.mount('#app')
+})

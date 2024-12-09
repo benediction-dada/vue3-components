@@ -6,7 +6,6 @@
 import { v4 as uuid } from 'uuid'
 import { MainState, ThemeType } from '@/types/main.ts'
 import { useDark, useToggle }  from '@vueuse/core'
-debugger
 const VITE_SMALL_SCREEN_WIDTH = import.meta.env.VITE_SMALL_SCREEN_WIDTH
 
 const isDark = useDark({
@@ -86,6 +85,8 @@ const useMainStore = defineStore('main', {
       this.themeType = type
     }
   }
+}, {
+  persist: true
 })
 
 let timmer:any = null
