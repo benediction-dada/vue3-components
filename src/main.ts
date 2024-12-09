@@ -1,6 +1,5 @@
 // 引入
 import router from './router'
-import config from './assets/js/config.ts'
 import directive from './utils/directive.ts'
 
 // 静态资源
@@ -18,9 +17,6 @@ import microApps from '@/microApps/index.ts'
 // 开始加载
 const app = createApp(App)
 const pinia = createPinia()
-
-app.config.globalProperties.$config = config
-
 app.use(pinia)
 app.use(router)
 

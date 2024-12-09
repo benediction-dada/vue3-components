@@ -5,8 +5,9 @@
 
 import { v4 as uuid } from 'uuid'
 import { MainState, ThemeType } from '@/types/main.ts'
-import $config from '@/assets/js/config'
 import { useDark, useToggle }  from '@vueuse/core'
+debugger
+const VITE_SMALL_SCREEN_WIDTH = import.meta.env.VITE_SMALL_SCREEN_WIDTH
 
 const isDark = useDark({
   // 存储到localStorage/sessionStorage中的Key 根据自己的需求更改
@@ -68,7 +69,7 @@ const useMainStore = defineStore('main', {
       const innerWidth = window.innerWidth
 
       // 赋值isSmallScreen
-      this.isSmallScreen = innerWidth <= $config.SMALL_SCREEN_WIDTH
+      this.isSmallScreen = innerWidth <= VITE_SMALL_SCREEN_WIDTH
     },
     // 初始化窗口监听事件
     install_WindowListen() {
@@ -92,7 +93,7 @@ function ListenScreen() {
   if(timmer) return
   timmer = setTimeout(() => {
     const innerWidth = window.innerWidth
-    this.isSmallScreen = innerWidth <= $config.SMALL_SCREEN_WIDTH
+    this.isSmallScreen = innerWidth <= VITE_SMALL_SCREEN_WIDTH
     clearTimeout(timmer)
     timmer = null
   }, 50)

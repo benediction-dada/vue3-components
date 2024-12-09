@@ -73,6 +73,7 @@ nav {
       padding: 12px;
       cursor: pointer;
       position: relative;
+      white-space: nowrap;
       &:hover {
         color: var(--primary);
       }
